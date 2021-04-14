@@ -8,14 +8,20 @@
  */
 
  const inventory = {
-    shoes: 10,
-    socks: 6,
-    shirts: 10,
-    pants: 5,
-  }
+  shoes: 10,
+  socks: 6,
+  shirts: 10,
+  pants: 5,
+}
 
 const sale = function (article, cant){
-  
+if (inventory[article] != undefined) {
+  if (inventory[article] >= cant) {
+    inventory[article] -= cant
+    return 200
+  }
+}
+return 500
 }
 
 // TESTS (no modificar)
