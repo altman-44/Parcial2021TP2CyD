@@ -1,0 +1,26 @@
+{
+  "name": "parcial2021tp2d",
+  "version": "1.0.0",
+  "description": "",
+  "main": "optPregunta6.js",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node optPregunta6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/altman-44/Parcial2021TP2CyD.git"
+  },
+  "keywords": [
+    "Parcial"
+  ],
+  "author": "Nicolas Altman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/altman-44/Parcial2021TP2CyD/issues"
+  },
+  "homepage": "https://github.com/altman-44/Parcial2021TP2CyD#readme"
+}

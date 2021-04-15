@@ -29,3 +29,40 @@
     }
  *
  */
+
+const express = require('express')
+
+const app = express()
+app.use(express.urlencoded({
+  extended: true
+}))
+app.use(express.json())
+
+const users = require('./data/users.json')
+
+app.get('/api/users', (req, res) => {
+  res.send(users)
+})
+
+app.get('/api/users/:id', (req, res) => {
+  const user = findUserById(req.params.id)
+  res.send(user || `Couldn't find the user by id: ${req.params.id}`)
+})
+
+app.post('/api/users/add', (req, res) => {
+  const user = findUserById(req.body.id)
+  if (!user) {
+    users.push(req.body)
+  }
+  res.send(users)
+})
+
+function findUserById(id) {
+  return users.find(u => u.id == id)
+}
+
+app.set('PORT', 3000 || 4000)
+
+app.listen(app.get('PORT'), () => {
+  console.log(`Listening on port ${app.get('PORT')}`)
+})
