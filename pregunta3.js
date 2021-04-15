@@ -3,10 +3,13 @@
 // si la longitud del array es < 3 se debe retornar undefined
 
 const greater3 = nums => {
-    if (nums.length < 3) return undefined
-    let duplicateRemoved = nums.filter((n, index, self) => index == self.indexOf(n))
-    if (duplicateRemoved.length < 3) return undefined
-    return duplicateRemoved.sort()[duplicateRemoved.length - 3]
+    if (nums.length >= 3) {
+        let duplicateRemoved = nums.filter((n, index, self) => index === self.indexOf(n))
+        if (duplicateRemoved.length >= 3) {
+            return duplicateRemoved.sort()[duplicateRemoved.length - 3]
+        }
+    }
+    return undefined
 }
 
 
