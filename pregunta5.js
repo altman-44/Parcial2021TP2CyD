@@ -24,12 +24,11 @@ update()
 console.log(beers)
 
 function update() {
-beers.map(beer => {
-  const dividedLabel = beer.label.split('/')
-  const fileExtension = dividedLabel[dividedLabel.length - 1].split('.')[1]
-  console.log(fileExtension)
-  const folder = dividedLabel[dividedLabel.length - 2]
-  const nameForUrl = beer.name.toLowerCase().replace(/\s/g, '%20')
-  beer.label = `https://tecnoshare.sharepoint.com/sites/beer/${folder}/${nameForUrl}.${fileExtension}`
-})
+  beers.map(beer => {
+    const dividedLabel = beer.label.split('/')
+    const fileExtension = dividedLabel[dividedLabel.length - 1].split('.')[1]
+    const folder = dividedLabel[dividedLabel.length - 2]
+    const nameForUrl = beer.name.toLowerCase().replace(/\s/g, '%20')
+    beer.label = `https://tecnoshare.sharepoint.com/sites/beer/${folder}/${nameForUrl}.${fileExtension}`
+  })
 }
